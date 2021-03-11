@@ -9,6 +9,6 @@ namespace Demo.Application.Interfaces
 {
     public interface ICourseService
     {
-        IEnumerable<CourseViewModal> GetCourses();
+       CourseViewModal GetCourses();
     }
 }
