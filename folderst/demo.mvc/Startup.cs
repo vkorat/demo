@@ -1,5 +1,6 @@
 using demo.mvc.Data;
 using Demo.Data.Context;
+using Demo.Infra.loC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +40,8 @@ namespace demo.mvc
 
             services.AddDbContext<DemoidentitiyDBContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("DemoidentitiyDBConnection2")));
+
+            RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +73,11 @@ namespace demo.mvc
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
         }
     }
 }
