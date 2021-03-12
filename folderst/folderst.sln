@@ -15,13 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "demo.mvc", "demo.mvc\demo.mvc.csproj", "{FB061C02-4E31-4096-B712-02B289E19C9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Dmain", "Demo.Dmain\Demo.Dmain.csproj", "{E9F6FE88-9AB5-499E-B636-23C339FF9DE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Dmain", "Demo.Dmain\Demo.Dmain.csproj", "{E9F6FE88-9AB5-499E-B636-23C339FF9DE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Data", "Demo.Data\Demo.Data.csproj", "{870D9572-2791-4CAF-8F44-E259465C939B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Data", "Demo.Data\Demo.Data.csproj", "{870D9572-2791-4CAF-8F44-E259465C939B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Application", "Demo.Application\Demo.Application.csproj", "{184A9585-013E-4D6C-8C5D-579C5F94B56A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Application", "Demo.Application\Demo.Application.csproj", "{184A9585-013E-4D6C-8C5D-579C5F94B56A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Infra.loC", "Demo.Infra.loC\Demo.Infra.loC.csproj", "{E513DBB5-0278-4111-8D61-5D04F254C581}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Infra.loC", "Demo.Infra.loC\Demo.Infra.loC.csproj", "{E513DBB5-0278-4111-8D61-5D04F254C581}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo.Bus", "Demo.Bus", "{3F0586CA-14D6-42CD-8ECE-E56501F1B987}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{BEC90B72-36BE-48B4-BDFB-18E52CDEF8BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
