@@ -17,6 +17,13 @@ namespace Demo.Data.Repository
         {
             _ctx = ctx;
         }
+
+        public void Add(Course course)
+        {
+            _ctx.Course.Add(course);
+            _ctx.SaveChanges();
+        }
+
         public IEnumerable<Course> GetCourses()
         {
             return _ctx.Course;

@@ -10,5 +10,6 @@ namespace Demo.Application.Interfaces
     public interface ICourseService
     {
        CourseViewModal GetCourses();
+        void Create(CourseViewModal courseViewModal);
     }
 }
