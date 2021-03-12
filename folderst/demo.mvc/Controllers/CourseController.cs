@@ -19,8 +19,7 @@ namespace demo.mvc.Controllers
         }
         public IActionResult Index()
         {
-            CourseViewModal model = _CourseService.GetCourses();
-            return View(model);
+            return View(_CourseService.GetCourses());
         }
     }
 }

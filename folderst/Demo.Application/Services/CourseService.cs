@@ -1,4 +1,6 @@
-﻿using Demo.Application.Interfaces;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Demo.Application.Interfaces;
 using Demo.Application.ViewModels;
 using Demo.Dmain.Commands;
 using Demo.Dmain.Interfaces;
@@ -15,29 +17,32 @@ namespace Demo.Application.Services
     {
         private ICourseRepository _courseRepository;
         private readonly IMediatorHandler _bus;
-        public CourseService(ICourseRepository courseRepository, IMediatorHandler bus)
+        private readonly IMapper _autoMapper;
+        public CourseService(ICourseRepository courseRepository, IMediatorHandler bus , IMapper autoMapper)
         {
             _courseRepository = courseRepository;
             _bus = bus;
+            _autoMapper = autoMapper;
         }
 
         public void Create(CourseViewModal courseViewModal)
         {
-            var createCourseCommand = new CreateCourseCommand(
-                courseViewModal.Name,
-                courseViewModal.Description,
-                courseViewModal.ImageUrl
-                );
+            //var createCourseCommand = new CreateCourseCommand(
+            //    courseViewModal.Name,
+            //    courseViewModal.Description,
+            //    courseViewModal.ImageUrl
+            //    );
 
-            _bus.SendCommand(createCourseCommand);
+            _bus.SendCommand(_autoMapper.Map<CreateCourseCommand>(courseViewModal));
         }
 
-        public CourseViewModal GetCourses()
+        public IEnumerable<CourseViewModal> GetCourses()
         {
-            return new CourseViewModal()
-            {
-                Courses = _courseRepository.GetCourses()
-            };
+            //return new CourseViewModal()
+            //{
+            //    Courses = _courseRepository.GetCourses()
+            //};
+            return _courseRepository.GetCourses().ProjectTo<CourseViewModal>(_autoMapper.ConfigurationProvider);
         }
     }
 }

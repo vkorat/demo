@@ -1,6 +1,7 @@
 using demo.mvc.Data;
 using Demo.Data.Context;
 using Demo.Infra.loC;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -41,6 +42,8 @@ namespace demo.mvc
             services.AddDbContext<DemoidentitiyDBContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("DemoidentitiyDBConnection2")));
 
+
+            services.AddMediatR(typeof(Startup));
             RegisterServices(services);
         }
 
